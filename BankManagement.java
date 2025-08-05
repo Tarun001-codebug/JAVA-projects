@@ -3,8 +3,7 @@ package BankManagementSystem;
 import java.util.HashMap;
 import java.util.Scanner;
 
-//;;;;;;;;;;;;;;;;;;;;;;
-//
+
 enum type{
     SAVING,CURRENT;
 }
@@ -135,14 +134,14 @@ public class BankManagement {
         System.out.print("ENTER ACCOUNT NUMBER :");
         long key = sc.nextInt();
         if(AccBook.containsKey(key)){
-            System.out.println("ENTER MONEY:");
+            System.out.print("ENTER MONEY: ");
             int money = sc.nextInt();
             if(money>AccBook.get(key).getBalance()){
                 System.out.println("INSUFFICIENT MONEY");
                 return;
             }
             AccBook.get(key).withdraw(money);
-            System.out.println("Rs "+ money + "WITHDREW SUCCESSFULLY");
+            System.out.println("Rs "+ money + " WITHDREW SUCCESSFULLY");
         } else {
             System.out.println("ENTER VALID ACCOUNT NUMBER , NO SUCH BANK ACCOUNT FOUND AT THIS ACCOUNT NUMBER");
         }
@@ -163,3 +162,4 @@ public class BankManagement {
         AccBook.forEach((a,b)-> System.out.println(b));
     }
 }
+
